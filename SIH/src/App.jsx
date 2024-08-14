@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button"
  
-export default function Home() {
+import React from 'react'
+
+function App() {
   return (
-    <div>
-      <Button>Click me</Button>
+    <> <div className = 'px-20'>
+      <Button> clock me</Button>
     </div>
+
+    </>
   )
 }
+
+export default App
