@@ -5,6 +5,7 @@ import React from 'react'
 function App() {
   return (
     <> 
+    <div className = 'px-20'>
       <Button> click me</Button>
     </div>
 
