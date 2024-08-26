@@ -116,7 +116,7 @@ const chartData = [
 
 const chartConfig = {
   views: {
-    label: "Page Views",
+    label: "Persentage",
   },
   Earthquake: {
     label: "Earthquake",
