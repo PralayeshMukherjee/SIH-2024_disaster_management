@@ -1,8 +1,15 @@
+import { Bar_Chart } from "@/parts/Bar_Chart"
+import { Pie_Chart } from "@/parts/Pie_Chart"
+
 
 
 const FuturePages = () => {
   return (
-    <div>FuturaPages</div>
+ <>
+ <Pie_Chart/>
+ <Bar_Chart/>
+
+ </>
   )
 }
 

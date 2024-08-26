@@ -2,7 +2,7 @@
 
 function Graph({event,Description}) {
   return (
-<div className="relative h-[300px] w-[300px] rounded-sm bg-cyan-800 ">
+<div className="relative h-[400px] w-[300px] rounded-sm bg-cyan-800 ">
  <h1 className="flex justify-center my-10 ">hj</h1>
   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
   <div className="absolute bottom-4 left-4 text-left">
