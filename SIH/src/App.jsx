@@ -4,8 +4,8 @@ import React from 'react'
 
 function App() {
   return (
-    <> <div className = 'px-20'>
-      <Button> clock me</Button>
+    <> 
+      <Button> click me</Button>
     </div>
 
     </>
