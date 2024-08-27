@@ -21,12 +21,18 @@ import {
 } from "@/components/ui/chart"
 
 const chartData = [
-  { month: "January", Cyclone: 186, Earthquake: 80, Tsunami: 25, Volcanic: 56, Flood: 99 },
-  { month: "February", Cyclone: 305, Earthquake: 200, Tsunami: 85, Volcanic: 56, Flood: 99 },
-  { month: "March", Cyclone: 237, Earthquake: 120, Tsunami: 95, Volcanic: 66, Flood: 99 },
-  { month: "April", Cyclone: 73, Earthquake: 190, Tsunami: 85, Volcanic: 126, Flood: 99 },
-  { month: "May", Cyclone: 209, Earthquake: 130, Tsunami: 5, Volcanic: 62, Flood: 99 },
-  { month: "June", Cyclone: 214, Earthquake: 140, Tsunami: 25, Volcanic: 66, Flood: 99 },
+  { month: "Jan", Cyclone: 1, Earthquake: 8, Tsunami: 25, Volcanic: 56, Flood: 99 },
+  { month: "Febr", Cyclone: 3, Earthquake: 2, Tsunami: 85, Volcanic: 56, Flood: 99 },
+  { month: "Marc", Cyclone: 0, Earthquake: 12, Tsunami: 95, Volcanic: 66, Flood: 99 },
+  { month: "Apr", Cyclone: 2, Earthquake: 1, Tsunami: 85, Volcanic: 126, Flood: 99 },
+  { month: "May", Cyclone: 2, Earthquake: 13, Tsunami: 5, Volcanic: 62, Flood: 99 },
+  { month: "Jun", Cyclone: 2, Earthquake: 14, Tsunami: 25, Volcanic: 66, Flood: 99 },
+  { month: "Jul", Cyclone: 1, Earthquake: 2, Tsunami: 95, Volcanic: 56, Flood: 99 },
+  { month: "Aug", Cyclone: 3, Earthquake: 2, Tsunami: 85, Volcanic: 56, Flood: 99 },
+  { month: "Sep", Cyclone: 6, Earthquake: 10, Tsunami: 95, Volcanic: 66, Flood: 99 },
+  { month: "Oct", Cyclone: 0, Earthquake: 10, Tsunami: 85, Volcanic: 126, Flood: 99 },
+  { month: "Nov", Cyclone: 2, Earthquake: 1, Tsunami: 5, Volcanic: 62, Flood: 99 },
+  { month: "Dec", Cyclone: 2, Earthquake: 0, Tsunami: 25, Volcanic: 66, Flood: 99 },
 ]
 
 const chartConfig = {
@@ -119,10 +125,12 @@ export function Egraph() {
               nameKey="month"
               cx="50%"
               cy="50%"
+              
               outerRadius={80}
               fill="var(--color-Cyclone)"
-            />
-            <Pie
+              label
+             />
+               <Pie
               data={chartData}
               dataKey="Earthquake"
               nameKey="month"
@@ -132,8 +140,44 @@ export function Egraph() {
               outerRadius={110}
               fill="var(--color-Earthquake)"
               label
-            />
+             />
+               <Pie
+              data={chartData}
+              dataKey="Tsunami"
+              nameKey="month"
+              cx="50%"
+              cy="50%"
+              innerRadius={110}
+              outerRadius={130}
+              fill="var(--color-Tsunami)"
+              label
+             />
+            <Pie
+              data={chartData}
+              dataKey="Tsunami"
+              nameKey="month"
+              cx="50%"
+              cy="50%"
+              innerRadius={130}
+              outerRadius={150}
+              fill="var(--color-Tsunami)"
+              label
+             />
+                <Pie
+              data={chartData}
+              dataKey="Flood"
+              nameKey="month"
+              cx="50%"
+              cy="50%"
+              innerRadius={150}
+              outerRadius={170}
+              fill="var(--color-Flood)"
+              label
+             />
           </PieChart>
+          
+ 
+      
         )
       default:
         return <div>No chart available</div> // Fallback 
@@ -146,7 +190,7 @@ export function Egraph() {
       <Card className="bg-cyan-900/30 backdrop-blur-3xl text-opacity-100 text-emerald-300">
         <CardHeader className="text-emerald-300">
           <CardTitle>{chartType.charAt(0).toUpperCase() + chartType.slice(1)} Chart - Multiple</CardTitle>
-          <CardDescription className="text-emerald-300">January - June 2024</CardDescription>
+          <CardDescription className="text-emerald-300">2024</CardDescription>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig}>{renderChart()}</ChartContainer>
@@ -158,7 +202,7 @@ export function Egraph() {
             <PieChartIcon onClick={() => setChartType("pie")} className="cursor-pointer" />
             <div className="grid gap-2">
               <div className="flex items-center gap-2 leading-none text-muted-foreground text-emerald-300">
-                Showing total analysis for the last 6 months
+                Showing total analysis for the last 1 year
               </div>
             </div>
           </div>
