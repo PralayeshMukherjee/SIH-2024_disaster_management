@@ -1,4 +1,5 @@
 
+
 const Analysis = () => {
   return (
     <div>Analysis</div>
@@ -6,4 +7,3 @@ const Analysis = () => {
 }
 
 export default Analysis
-
