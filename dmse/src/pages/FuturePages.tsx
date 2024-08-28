@@ -11,7 +11,7 @@ const FuturePages: React.FC = () => {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const label = e.dataTransfer.getData("text/plain"); 
-    if (label) {
+      if (label) {
       setCards((prevCards) => [...prevCards, label]);
     }
   };
@@ -23,18 +23,30 @@ const FuturePages: React.FC = () => {
   const handleRemoveCard = (index: number) => {
     setCards(cards.filter((_, i) => i !== index));
   };
+  
+ 
+
+  
 
   return (
     <>
       <Managebar />
-      <ScrollArea className="flex-1 w-full min-h-screen" onDrop={handleDrop} onDragOver={handleDragOver}>
+      <div  className="flex justify-end px-24 "           >
+        <PopoverDemo  />
+        </div>
+        <div className="w-11/12">
         <Pie_Chart />
-        <PopoverDemo />
+        </div>
+      <ScrollArea className="flex-1 w-full min-h-screen" onDrop={handleDrop} onDragOver={handleDragOver}>
+       
+       
         <div className="flex flex-wrap justify-center space-x-10 text-center mt-10">
           {cards.map((_, index) => (
             <Cards key={index} onClose={() => handleRemoveCard(index)} />
           ))}
         </div>
+    
+        
       </ScrollArea>
     </>
   );

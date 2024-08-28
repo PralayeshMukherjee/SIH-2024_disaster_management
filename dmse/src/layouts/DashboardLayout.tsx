@@ -25,21 +25,21 @@ import { Link, Outlet } from 'react-router-dom';
 
 const DashboardLayout= () => {
   return (
-<div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-gradient-to-r from-teal-700 to-sky-950 opacity-100 backdrop-blur-3xl">
-            <div className="hidden border-r bg-muted/40 md:block h-full">
-                <div className="flex h-full max-h-screen flex-col gap-2">
+<div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-gradient-to-r from-teal-700 to-sky-950 opacity-100 backdrop-blur-3xl  ">
+            <div className="hidden border-r bg-muted/40 md:block h-full ">
+                <div className="flex h-full max-h-screen flex-col gap-2 sticky top-0">
                     <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
                         <Link to="/" className="flex items-center gap-2 font-semibold">
                            
-                            <span className="">DMS</span>
+                            <span className="">CatastroPick</span>
                         </Link>
                         <Button variant="outline" size="icon" className="ml-auto h-8 w-8 bg-gradient-to-r from-cyan-900 to-blue-950 opacity-100 backdrop-blur-3xl">
                             <Bell className="h-4 w-4" />
                             <span className="sr-only">Toggle notifications</span>
                         </Button>
                     </div>
-                    <div className="flex-1 opacity-100 backdrop-blur-3xl  bg-gradient-to-r from-cyan-900 to-blue-950   ">
-                        <nav className="grid items-start px-2 text-balance font-medium lg:px-4 text-center 0">
+                    <div className="flex-1 opacity-100 backdrop-blur-3xl  bg-gradient-to-r from-cyan-900 to-blue-950 ">
+                        <nav className="grid items-start px-2  text-balance font-medium lg:px-4 text-center 0  sticky top-0">
                             <Link
                                 to="/dashboard/home"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground  text-teal-500 transition-all hover:text-primary">
@@ -118,7 +118,7 @@ const DashboardLayout= () => {
                            
                         </SheetContent>
                     </Sheet>
-                    <div className="w-full flex-1">
+                    <div className="w-full flex-1 sticky top-0">
                         <form>
                             <div className="relative bg-gradient-to-r from-cyan-900 to-blue-950 opacity-100 backdrop-blur-3xl">
                                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground " />

@@ -37,7 +37,6 @@ export function Cards({ onClose }: CardsProps) {
         </form>
       </CardContent>
       <CardFooter className="flex justify-end">
-        <Button>Analyse the parameter</Button>
         <Button className="bg-white/20">Analyse the perameter</Button>
       </CardFooter>
     </Card>

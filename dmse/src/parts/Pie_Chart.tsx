@@ -54,6 +54,8 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export function Pie_Chart() {
+
+ 
   const totalNo = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.No, 0)
   }, [])
