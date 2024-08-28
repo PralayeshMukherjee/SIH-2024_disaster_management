@@ -1,32 +1,47 @@
-
-
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 
 export function Cards() {
   return (
-    <Carousel className="w-full max-w-xs">
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
+    <Card className="w-[350px] bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden text-emerald-200">
+      <CardHeader>
+        <CardTitle>Predection</CardTitle>
+
+      </CardHeader>
+      <CardContent>
+        <form>
+          <div className="grid w-full items-center gap-4">
+            <div className=" flex space-x-20 text-center">
+             <p  className="font-bold">State :</p>
+             <p className="font-light">k</p>
             </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+            <div className=" flex space-x-20 text-center">
+             <p  className="font-bold">Disaster : </p>
+             <p className="font-light">hjk</p>
+            </div>
+            <div className=" flex space-x-20 text-center">
+             <p  className="font-bold">Origin :</p>
+             <p className="font-light">hjk</p>
+            </div>
+            <div className=" flex space-x-20 text-center">
+             <p  className="font-bold">gh</p>
+             <p className="font-light">hjk</p>
+            </div>
+          </div>
+        </form>
+      </CardContent>
+      <CardFooter className="flex justify-end">
+       
+        <Button>Analyse the perameter</Button>
+      </CardFooter>
+    </Card>
   )
 }
+

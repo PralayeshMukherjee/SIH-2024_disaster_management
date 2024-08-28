@@ -8,8 +8,10 @@ const FuturePages = () => {
  <>
  <Pie_Chart/>
  <PopoverDemo/>
-<Cards/>
-
+<div className="flex space-x-20 text-center">
+ <Cards/>
+ <Cards/>
+ </div>
  </>
   )
 }
