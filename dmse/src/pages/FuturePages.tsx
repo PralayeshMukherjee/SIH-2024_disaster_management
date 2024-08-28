@@ -1,26 +1,43 @@
+import React, { useState } from "react";
+import { Pie_Chart } from "@/parts/Pie_Chart";
+import { PopoverDemo } from "@/parts/PopoverDemo";
+import { Cards } from "@/parts/Cards";
+import { Managebar } from "@/parts/manage-bar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-import { Pie_Chart } from "@/parts/Pie_Chart"
-import {PopoverDemo} from "@/parts/PopoverDemo"
-import {Cards} from "@/parts/Cards"
+const FuturePages: React.FC = () => {
+  const [cards, setCards] = useState<string[]>(["default"]);
 
-const FuturePages = () => {
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const label = e.dataTransfer.getData("text/plain"); 
+    if (label) {
+      setCards((prevCards) => [...prevCards, label]);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault(); 
+  };
+
+  const handleRemoveCard = (index: number) => {
+    setCards(cards.filter((_, i) => i !== index));
+  };
+
   return (
- <>
- <Pie_Chart/>
- <PopoverDemo/>
-<div className="flex space-x-10 text-center">
- <Cards/>
- <Cards/>
- <Cards/>
- </div>
- <div className="flex space-x-10 text-center">
- <Cards/>
- <Cards/>
- <Cards/>
+    <>
+      <Managebar />
+      <ScrollArea className="flex-1 w-full min-h-screen" onDrop={handleDrop} onDragOver={handleDragOver}>
+        <Pie_Chart />
+        <PopoverDemo />
+        <div className="flex flex-wrap justify-center space-x-10 text-center mt-10">
+          {cards.map((_, index) => (
+            <Cards key={index} onClose={() => handleRemoveCard(index)} />
+          ))}
+        </div>
+      </ScrollArea>
+    </>
+  );
+};
 
- </div>
- </>
-  )
-}
-
-export default FuturePages
+export default FuturePages;
