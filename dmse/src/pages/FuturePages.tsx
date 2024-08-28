@@ -7,18 +7,17 @@ const FuturePages = () => {
   return (
  <>
  <Pie_Chart/>
- <PopoverDemo/>
-<div className="flex space-x-10 text-center">
- <Cards/>
- <Cards/>
- <Cards/>
+ <div className=" flex justify-end">
+ <PopoverDemo />
  </div>
- <div className="flex space-x-10 text-center">
- <Cards/>
+<div className="flex space-x-10 text-center">
+<Cards/>
  <Cards/>
  <Cards/>
 
+
  </div>
+ 
  </>
   )
 }
