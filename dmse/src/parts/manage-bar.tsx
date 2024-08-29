@@ -10,10 +10,10 @@ export const Managebar: React.FC = () => {
   };
 
   return (
-    <div className="fixed right-0 top-[60px] h-full w-[60px] flex flex-col items-center text-primary dark:bg-[#1E1F22] bg-cyan-900 py-3 shadow-lg">
+    <div className="fixed right-0 top-[60px]  w-[60px] flex flex-col items-center text-primary dark:bg-[#1E1F22] bg-cyan-900 py-3 shadow-lg">
       <Separator className="h-[2px] bg-cyan-900 dark:bg-zinc-700 rounded-md w-10 mx-auto" />
       
-      <ScrollArea className="flex-1 w-full">
+      <ScrollArea className="flex-1 ">
         <div className="space-y-4 mt-4">
           <ActionTooltip label="Test" side="top" align="center">
             <div

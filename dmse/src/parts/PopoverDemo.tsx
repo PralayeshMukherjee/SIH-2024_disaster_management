@@ -64,8 +64,9 @@ export function PopoverDemo() {
                 className="col-span-2 h-8"
               />
                </div>
-               <div className="justify-items-end ">
-            <Button>Filter</Button>
+               <div className="flex justify-end  ">
+            <Button className="bg-gradient-to-r from-cyan-600 to-blue-950/30 " 
+           >Filter</Button>
             
             </div>
           </div>

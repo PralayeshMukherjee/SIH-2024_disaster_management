@@ -3,6 +3,7 @@ import Graph from '@/parts/Graph';
 import Parameter  from '@/parts/Parameter';
 
 const Homepage = () => {
+   
   return (
       <>
       <div className=''>

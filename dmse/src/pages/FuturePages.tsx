@@ -23,10 +23,6 @@ const FuturePages: React.FC = () => {
   const handleRemoveCard = (index: number) => {
     setCards(cards.filter((_, i) => i !== index));
   };
-  
- 
-
-  
 
   return (
     <>
@@ -44,9 +40,8 @@ const FuturePages: React.FC = () => {
           {cards.map((_, index) => (
             <Cards key={index} onClose={() => handleRemoveCard(index)} />
           ))}
-        </div>
-    
-        
+     </div>
+   
       </ScrollArea>
     </>
   );
