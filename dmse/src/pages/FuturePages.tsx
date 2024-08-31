@@ -5,6 +5,7 @@ import { Managebar } from "@/parts/manage-bar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { WeatherCard } from "@/parts/weatherCard";
 import { Cards } from "@/parts/Cards"; 
+import { CycloneCard } from "@/parts/CycloneCard";
 
 
 const FuturePages: React.FC = () => {
@@ -52,13 +53,20 @@ const FuturePages: React.FC = () => {
                     onClose={() => handleRemoveCard(card.id)}
                   />
                 );
-              case "cards":
+              case "Cyclone":
                 return (
-                  <Cards
+                  <CycloneCard
                     key={card.id}
                     onClose={() => handleRemoveCard(card.id)}
                   />
                 );
+                case "cards":
+                  return (
+                    <Cards
+                      key={card.id}
+                      onClose={() => handleRemoveCard(card.id)}
+                    />
+                  );
               default:
                 return null;
             }
