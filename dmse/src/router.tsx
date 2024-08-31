@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 path: 'PastPages',
                 element: <PastPages/>,
             },
-           
+         
         ],
     },
   
