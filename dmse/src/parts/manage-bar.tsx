@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
+<<<<<<< HEAD
 import { PieChartIcon, GripVertical, FileBox,  Maximize2Icon, MinusIcon, CloudMoonRain,Earth,Waves,Zap,ChevronUp  } from "lucide-react";
+=======
+import { PieChartIcon, Droplets, GripVertical, FileBox, Maximize2Icon, MinusIcon } from "lucide-react";
+>>>>>>> 97d8b88502d27f5a93bb6f8b54ee8035ebb07be9
 import { ActionTooltip } from "@/components/action-tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
@@ -98,7 +102,7 @@ export const Managebar: React.FC = () => {
                   draggable
                   onDragStart={(e) => handleDragStart(e, "weather-card")}
                 >
-                  <PieChartIcon className="h-8 w-8 text-white mx-auto" />
+                  <Droplets className="h-8 w-8 text-white mx-auto" />
                 </div>
               </ActionTooltip>
               <ActionTooltip label="Cyclone" side="top" align="center">
@@ -107,7 +111,11 @@ export const Managebar: React.FC = () => {
                   draggable
                   onDragStart={(e) => handleDragStart(e, "Cyclone")}
                 >
+<<<<<<< HEAD
                   <Zap  className="h-8 w-8 text-white mx-auto" />
+=======
+                  <PieChartIcon className="h-8 w-8 text-white mx-auto" />
+>>>>>>> 97d8b88502d27f5a93bb6f8b54ee8035ebb07be9
                 </div>
               </ActionTooltip>
 
