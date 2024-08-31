@@ -39,7 +39,6 @@ export function WeatherCard({ onClose }: WeatherCardProps) {
     setShowCurrent(prevState => !prevState);
   };
 
-  // Helper function to format numbers to two decimal places
   const formatNumber = (value: number | undefined) => value?.toFixed(2) ?? "Loading...";
 
   return (
