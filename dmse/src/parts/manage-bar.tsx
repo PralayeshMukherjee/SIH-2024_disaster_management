@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { PieChartIcon, GripVertical, FileBox, XCircleIcon, Maximize2Icon, MinusIcon } from "lucide-react";
+import { PieChartIcon, GripVertical, FileBox,  Maximize2Icon, MinusIcon, CloudMoonRain,Earth,Waves,Zap,ChevronUp  } from "lucide-react";
 import { ActionTooltip } from "@/components/action-tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
@@ -101,15 +101,57 @@ export const Managebar: React.FC = () => {
                   <PieChartIcon className="h-8 w-8 text-white mx-auto" />
                 </div>
               </ActionTooltip>
-              <ActionTooltip label="Cards" side="top" align="center">
+              <ActionTooltip label="Cyclone" side="top" align="center">
                 <div
                   className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
                   draggable
-                  onDragStart={(e) => handleDragStart(e, "cards")}
+                  onDragStart={(e) => handleDragStart(e, "Cyclone")}
                 >
-                  <XCircleIcon className="h-8 w-8 text-white mx-auto" />
+                  <Zap  className="h-8 w-8 text-white mx-auto" />
                 </div>
               </ActionTooltip>
+
+              <ActionTooltip label="Earthquake" side="top" align="center">
+                <div
+                  className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, "Earthquake")}
+                >
+                  <Earth className="h-8 w-8 text-white mx-auto" />
+                </div>
+              </ActionTooltip>
+
+              <ActionTooltip label="Tsunami" side="top" align="center">
+                <div
+                  className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, "Tsunami")}
+                >
+                  < CloudMoonRain className="h-8 w-8 text-white mx-auto" />
+                </div>
+               </ActionTooltip>
+
+               <ActionTooltip label="Tsunami" side="top" align="center">
+                <div
+                  className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, "Flood")}
+                >
+                  < Waves className="h-8 w-8 text-white mx-auto" />
+                </div>
+               </ActionTooltip>
+
+               
+               <ActionTooltip label="Volcanoc_Eroption" side="top" align="center">
+                <div
+                  className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, "Flood")}
+                >
+                  < ChevronUp  className="h-8 w-8 text-white mx-auto" />
+                </div>
+               </ActionTooltip>
+              
             </div>
           </ScrollArea>
         </>
