@@ -1,5 +1,6 @@
-import { TrendingUp } from "lucide-react"
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
+import { useEffect, useState } from 'react';
+import { AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { fetchHourlyWeatherData } from '@/utils/climateChangeData'; 
 import {
   Card,
   CardContent,
@@ -7,52 +8,65 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-const chartData = [
-  { day: "Sun", temperature: 186, atmospheric_pressure: 80,Humidity: 25, Precipitation: 56,Wind: 99 },
-  { day: "Mon", temperature: 305, atmospheric_pressure: 200, Humidity: 85, Precipitation:56,Wind: 99},
-  { day: "Tues", temperature: 237, atmospheric_pressure: 120, Humidity: 95, Precipitation:66,Wind: 99},
-  { day: "wed", temperature: 73, atmospheric_pressure: 190, Humidity: 85, Precipitation:126 ,Wind: 99},
-  { day: "Fri", temperature: 209, atmospheric_pressure: 130, Humidity: 5, Precipitation:62,Wind: 99},
-  { day: "Sat", temperature: 214, atmospheric_pressure: 140, Humidity: 25,Precipitation:66,Wind: 99},
-  { day: "Fri", temperature: 214, atmospheric_pressure: 140, Humidity: 25,Precipitation:66,Wind: 99},
-]
-const chartConfig = {
-  temperature: {
-    label: "temperature",
-    color: "hsl(var(--chart-1))",
-  },
-  atmospheric_pressure: {
-    label: "atmospheric_pressure",
-    color: "hsl(var(--chart-2))",
-  },
-  Humidity: {
-    label: "Humidity",
-    color: "hsl(var(--chart-3))",
-  },
-  Precipitation: {
-    label: "Precipitation",
-    color: "hsl(var(--chart-4))",
-  },
-  Wind: {
-    label: "Wind",
-    color: "hsl(var(--chart-5))",
-  },
-} satisfies ChartConfig
+import { TrendingUp } from 'lucide-react';
 
+const ClimateGraph = () => {
+  const [data, setData] = useState<any[]>([]);
 
+  const chartConfig = {
+    temperature: {
+      label: "temperature",
+      color: "hsl(var(--chart-1))",
+    },
+    atmospheric_pressure: {
+      label: "atmospheric_pressure",
+      color: "hsl(var(--chart-2))",
+    },
+    Humidity: {
+      label: "Humidity",
+      color: "hsl(var(--chart-3))",
+    },
+    Precipitation: {
+      label: "Precipitation",
+      color: "hsl(var(--chart-4))",
+    },
+    Wind: {
+      label: "Wind",
+      color: "hsl(var(--chart-5))",
+    },
+  } satisfies ChartConfig
 
-export function Parameter ()
- {
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const weatherData = await fetchHourlyWeatherData();
+        const formattedData = weatherData.time.map((time: string, index: number) => ({
+          time,
+          temperature_2m: weatherData.temperature_2m[index],
+          wind_speed_10m: weatherData.wind_speed_10m[index],
+          relative_humidity_2m: weatherData.relative_humidity_2m[index],
+          precipitation_probability: weatherData.precipitation_probability[index],
+          surface_pressure: weatherData.surface_pressure[index],
+        }));
+        setData(formattedData);
+      } catch (error) {
+        console.error('Failed to fetch weather data:', error);
+      }
+    };
+
+    getData();
+  }, []);
+
   return (
-<Card>
-      <CardHeader>
+      <Card>
+        <CardHeader>
         <CardTitle>Parameter</CardTitle>
         <CardDescription>
           Showing climatic conditions
@@ -60,18 +74,18 @@ export function Parameter ()
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
-          <AreaChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              left: 12,
-              right: 12,
-              top: 12,
-            }}
-            stackOffset="expand"
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
+      <AreaChart
+        accessibilityLayer
+        data={data}
+        margin={{
+          left: 12,
+          right: 12,
+          top: 12,
+        }}
+        stackOffset="expand"
+      >
+        <CartesianGrid vertical={false} />
+        <XAxis
               dataKey="day"
               tickLine={false}
               axisLine={false}
@@ -82,56 +96,41 @@ export function Parameter ()
               cursor={false}
               content={<ChartTooltipContent indicator="line" />}
             />
-            <Area
-              dataKey="other"
-              type="natural"
-              fill="var(--color-other)"
-              fillOpacity={0.1}
-              stroke="var(--color-other)"
-              stackId="a"
-            />
-            <Area
-              dataKey="temperature"
-              type="natural"
-              fill="var(--color-temperature)"
-              fillOpacity={0.4}
-              stroke="var(--color-temperature)"
-              stackId="a"
-            />
-            <Area
-              dataKey="atmospheric_pressure"
-              type="natural"
-              fill="var(--color-atmospheric_pressure)"
-              fillOpacity={0.4}
-              stroke="var(--color-atmospheric_pressure)"
-              stackId="a"
-            />
-              <Area
-              dataKey="Humidity"
-              type="natural"
-              fill="var(--color-Humidity)"
-              fillOpacity={0.4}
-              stroke="var(--color-Humidity)"
-              stackId="a"
-            />
-              <Area
-              dataKey="Precipitation"
-              type="natural"
-              fill="var(--color-Precipitation)"
-              fillOpacity={0.4}
-              stroke="var(--color-Precipitation)"
-              stackId="a"
-            />
-              <Area
-              dataKey="Wind"
-              type="natural"
-              fill="var(--color-Wind)"
-              fillOpacity={0.4}
-              stroke="var(--color-Wind)"
-              stackId="a"
-            />
-          </AreaChart>
-        </ChartContainer>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="time" tickFormatter={(value) => value.slice(11, 16)} />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Area
+          type="monotone"
+          dataKey="temperature_2m"
+          stroke="#8884d8"
+          fill="#8884d8"
+          name="Temperature"
+        />
+        <Area
+          type="monotone"
+          dataKey="wind_speed_10m"
+          stroke="#82ca9d"
+          fill="#82ca9d"
+          name="Wind Speed"
+        />
+        <Area
+          type="monotone"
+          dataKey="relative_humidity_2m"
+          stroke="#ff7300"
+          fill="#ff7300"
+          name="Humidity"
+        />
+        <Area
+          type="monotone"
+          dataKey="precipitation_probability"
+          stroke="#ff0000"
+          fill="#ff0000"
+          name="Precipitation"
+        />
+      </AreaChart>
+      </ChartContainer>
       </CardContent>
       <CardFooter>
         <div className="flex w-full items-start gap-2 text-sm">
@@ -145,8 +144,8 @@ export function Parameter ()
           </div>
         </div>
       </CardFooter>
-    </Card>
-  )
-}
+      </Card>
+  );
+};
 
-export default Parameter
+export default ClimateGraph;
