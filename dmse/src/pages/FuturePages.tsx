@@ -5,6 +5,7 @@ import { Cards } from "@/parts/Cards";
 import { Managebar } from "@/parts/manage-bar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
+
 const FuturePages: React.FC = () => {
   const [cards, setCards] = useState<string[]>(["default"]);
 
@@ -20,10 +21,12 @@ const FuturePages: React.FC = () => {
     e.preventDefault(); 
   };
 
+
   const handleRemoveCard = (index: number) => {
     setCards(cards.filter((_, i) => i !== index));
+  
   };
-
+ 
   return (
     <>
       <Managebar />
@@ -31,9 +34,10 @@ const FuturePages: React.FC = () => {
         <PopoverDemo  />
         </div>
         <div className="w-11/12">
-        <Pie_Chart />
+        < Pie_Chart/>
         </div>
-      <ScrollArea className="flex-1 w-full min-h-screen" onDrop={handleDrop} onDragOver={handleDragOver}>
+     
+      <ScrollArea className="flex-1 w-full min-h-screen" onDrop={handleDrop} onDragOver={handleDragOver} >
        
        
         <div className="flex flex-wrap justify-center space-x-10 text-center mt-10">
@@ -41,7 +45,7 @@ const FuturePages: React.FC = () => {
             <Cards key={index} onClose={() => handleRemoveCard(index)} />
           ))}
      </div>
-   
+
       </ScrollArea>
     </>
   );

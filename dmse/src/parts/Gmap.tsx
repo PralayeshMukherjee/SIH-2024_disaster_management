@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const Gmap = props => {
   return (
- <Map 
+ <Map
  google = {props.google}
  style = {{width: "100%", height:"100%" }}
 zoom = {10}

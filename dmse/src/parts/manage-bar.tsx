@@ -9,6 +9,7 @@ export const Managebar: React.FC = () => {
     e.dataTransfer.setData("text/plain", label); 
   };
 
+
   return (
     <div className="fixed right-0 top-[60px]  w-[60px] flex flex-col items-center text-primary dark:bg-[#1E1F22] bg-cyan-900 py-3 shadow-lg">
       <Separator className="h-[2px] bg-cyan-900 dark:bg-zinc-700 rounded-md w-10 mx-auto" />
