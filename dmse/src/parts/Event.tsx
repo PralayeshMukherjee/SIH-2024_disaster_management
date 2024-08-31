@@ -19,7 +19,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 const chartData = [
-  { date: "2024-04-01", Earthquake: 222, Cyclone: 150 ,Tsunami: 25, Volcanic: 56,Flood: 99},
+  { date: "2024-04-01", Earthquake: 22, Cyclone: 150 ,Tsunami: 25, Volcanic: 56,Flood: 99},
   { date: "2024-04-02", Earthquake: 97, Cyclone: 180 ,Tsunami: 25, Volcanic: 56,Flood: 99},
   { date: "2024-04-03", Earthquake: 167, Cyclone: 120 ,Tsunami: 25, Volcanic: 56,Flood: 99},
   { date: "2024-04-04", Earthquake: 242, Cyclone: 260 ,Tsunami: 25, Volcanic: 56,Flood: 99},

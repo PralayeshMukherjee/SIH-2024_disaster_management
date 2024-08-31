@@ -60,6 +60,7 @@ export const Managebar: React.FC = () => {
     e.dataTransfer.setData("text/plain", cardType);
   };
 
+
   return (
     <div
       ref={toolbarRef}
