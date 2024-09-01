@@ -131,7 +131,7 @@ export const Managebar: React.FC = () => {
                 </div>
                </ActionTooltip>
 
-               <ActionTooltip label="Tsunami" side="top" align="center">
+               <ActionTooltip label="Flood" side="top" align="center">
                 <div
                   className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
                   draggable
@@ -146,7 +146,7 @@ export const Managebar: React.FC = () => {
                 <div
                   className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
                   draggable
-                  onDragStart={(e) => handleDragStart(e, "olcanoc_Eroption")}
+                  onDragStart={(e) => handleDragStart(e, "volcanoc_Eroption")}
                 >
                   < ChevronUp  className="h-8 w-8 text-white mx-auto" />
                 </div>

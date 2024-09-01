@@ -4,8 +4,12 @@ import { PopoverDemo } from "@/parts/PopoverDemo";
 import { Managebar } from "@/parts/manage-bar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { WeatherCard } from "@/parts/weatherCard";
-import { Cards } from "@/parts/Cards"; 
+
 import { CycloneCard } from "@/parts/CycloneCard";
+import { EarthquakeCard } from "@/parts/EarthquakeCard";
+import { TsunamiCard } from "@/parts/TsunamiCard";
+import { FloodCard } from "@/parts/FloodCard";
+import { VolcanicCard } from "@/parts/VolcanocCard";
 
 
 const FuturePages: React.FC = () => {
@@ -60,13 +64,44 @@ const FuturePages: React.FC = () => {
                     onClose={() => handleRemoveCard(card.id)}
                   />
                 );
-                case "cards":
+          
+                case "Earthquake":
                   return (
-                    <Cards
+                    <EarthquakeCard
+                    
                       key={card.id}
                       onClose={() => handleRemoveCard(card.id)}
+                         
                     />
                   );
+
+                  case "Tsunami":
+                    return (
+                      <TsunamiCard
+                      
+                        key={card.id}
+                        onClose={() => handleRemoveCard(card.id)}
+                           
+                      />
+                    );
+                    case "Flood":
+                      return (
+                        <FloodCard
+                        
+                          key={card.id}
+                          onClose={() => handleRemoveCard(card.id)}
+                             
+                        />
+                      );
+                      case "volcanoc_Eroption":
+                        return (
+                          <VolcanicCard
+                          
+                            key={card.id}
+                            onClose={() => handleRemoveCard(card.id)}
+                               
+                          />
+                        );
               default:
                 return null;
             }
