@@ -68,7 +68,7 @@ export const Managebar: React.FC = () => {
     <div 
       ref={toolbarRef}
       className={`fixed z-50 bg-cyan-900 dark:bg-[#1E1F22] shadow-lg p-3 rounded-lg transition-all duration-300 cursor-grab`}
-      style={{ top: position.y, left: position.x }}
+      style={{ top: position.y, right: position.x }}
       onMouseDown={handleMouseDown}
     >
       {isMinimized ? (
