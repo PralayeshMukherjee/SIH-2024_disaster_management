@@ -35,83 +35,75 @@ const FuturePages: React.FC = () => {
  
   return (
     <>
- 
-      <div className="flex justify-end px-24">
-        <PopoverDemo />
+      <div className="flex flex-col " style={{ overflowX: "hidden" }}>
+  <div >
+    <Managebar />
+  </div>
+  <div className="flex-1 ml-64">
+    <div className="flex justify-end px-24">
+      <PopoverDemo />
+    </div>
+    <div className="w-11/12">
+      <Pie_Chart />
+    </div>
+    <ScrollArea
+      className="flex-1 min-h-screen"
+      onDrop={handleDrop}
+      onDragOver={handleDragOver}
+    >
+      <div className="flex flex-wrap justify-center space-x-10 text-center mt-10">
+        {cards.map((card) => {
+          switch (card.type) {
+            case "weather-card":
+              return (
+                <WeatherCard
+                  key={card.id}
+                  onClose={() => handleRemoveCard(card.id)}
+                />
+              );
+            case "Cyclone":
+              return (
+                <CycloneCard
+                  key={card.id}
+                  onClose={() => handleRemoveCard(card.id)}
+                />
+              );
+            case "Earthquake":
+              return (
+                <EarthquakeCard
+                  key={card.id}
+                  onClose={() => handleRemoveCard(card.id)}
+                />
+              );
+            case "Tsunami":
+              return (
+                <TsunamiCard
+                  key={card.id}
+                  onClose={() => handleRemoveCard(card.id)}
+                />
+              );
+            case "Flood":
+              return (
+                <FloodCard
+                  key={card.id}
+                  onClose={() => handleRemoveCard(card.id)}
+                />
+              );
+            case "volcanoc_Eroption":
+              return (
+                <VolcanicCard
+                  key={card.id}
+                  onClose={() => handleRemoveCard(card.id)}
+                />
+              );
+            default:
+              return null;
+          }
+        })}
       </div>
-      <div className="w-11/12">
-        <Pie_Chart />
-      </div>
-      <ScrollArea
-        className="flex-1 w-full min-h-screen"
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-      >
-        <div className="flex flex-wrap justify-center space-x-10 text-center mt-10">
-          {cards.map((card) => {
-            switch (card.type) {
-              case "weather-card":
-                return (
-                  <WeatherCard
-                    key={card.id}
-                    onClose={() => handleRemoveCard(card.id)}
-                  />
-                );
-              case "Cyclone":
-                return (
-                  <CycloneCard
-                    key={card.id}
-                    onClose={() => handleRemoveCard(card.id)}
-                  />
-                );
-          
-                case "Earthquake":
-                  return (
-                    <EarthquakeCard
-                    
-                      key={card.id}
-                      onClose={() => handleRemoveCard(card.id)}
-                         
-                    />
-                  );
-
-                  case "Tsunami":
-                    return (
-                      <TsunamiCard
-                      
-                        key={card.id}
-                        onClose={() => handleRemoveCard(card.id)}
-                           
-                      />
-                    );
-                    case "Flood":
-                      return (
-                        <FloodCard
-                        
-                          key={card.id}
-                          onClose={() => handleRemoveCard(card.id)}
-                             
-                        />
-                      );
-                      case "volcanoc_Eroption":
-                        return (
-                          <VolcanicCard
-                          
-                            key={card.id}
-                            onClose={() => handleRemoveCard(card.id)}
-                               
-                          />
-                        );
-              default:
-                return null;
-            }
-          })}
-        </div>
-      
-      </ScrollArea>
-<div  className="flex-none">
-      <Managebar  />
-      </div>
+    </ScrollArea>
+  </div>
+</div>
     </>
   );
 };

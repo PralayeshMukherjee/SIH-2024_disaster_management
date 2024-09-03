@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 
 export const Managebar: React.FC = () => {
   const [isMinimized, setIsMinimized] = useState(false);
-  const [position, setPosition] = useState({ x: 1600.87, y: 200 });
+  const [position, setPosition] = useState({ x: window.innerWidth - 400, y: 150 }); //Adjust the window.innerWidth - 400 if it is not working Queen
   const toolbarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ export const Managebar: React.FC = () => {
       if (toolbar) {
         const { innerWidth, innerHeight } = window;
         const toolbarRect = toolbar.getBoundingClientRect();
+        
         setPosition((prevPosition) => ({
           x: Math.min(Math.max(prevPosition.x, 0), innerWidth - toolbarRect.width),
           y: Math.min(Math.max(prevPosition.y, 0), innerHeight - toolbarRect.height),
@@ -23,6 +24,8 @@ export const Managebar: React.FC = () => {
     };
 
     window.addEventListener("resize", handleResize);
+    handleResize();
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
