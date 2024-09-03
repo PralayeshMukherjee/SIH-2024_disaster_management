@@ -109,7 +109,7 @@ const FuturePages: React.FC = () => {
         </div>
       
       </ScrollArea>
-<div  >
+<div  className="flex-none">
       <Managebar  />
       </div>
     </>
