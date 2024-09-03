@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { GripVertical, FileBox,  Maximize2Icon, MinusIcon,Droplets, CloudMoonRain,Earth,Waves,ChevronUp,Zap  } from "lucide-react";
+import { GripVertical, FileBox, Maximize2Icon, MinusIcon, Droplets, CloudMoonRain, Earth, Waves, ChevronUp, Zap } from "lucide-react";
 import { ActionTooltip } from "@/components/action-tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 
 export const Managebar: React.FC = () => {
   const [isMinimized, setIsMinimized] = useState(false);
-  const [position, setPosition] = useState({ right: 0, y: 100 });
+  const [position, setPosition] = useState({ x: 1600.87, y: 200 });
   const toolbarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,11 +16,11 @@ export const Managebar: React.FC = () => {
         const { innerWidth, innerHeight } = window;
         const toolbarRect = toolbar.getBoundingClientRect();
         setPosition((prevPosition) => ({
-          right: Math.max(innerWidth - toolbarRect.right, 0),
+          x: Math.min(Math.max(prevPosition.x, 0), innerWidth - toolbarRect.width),
           y: Math.min(Math.max(prevPosition.y, 0), innerHeight - toolbarRect.height),
         }));
       }
-    }
+    };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -60,28 +60,24 @@ export const Managebar: React.FC = () => {
     e.dataTransfer.setData("text/plain", cardType);
   };
 
-
   return (
- 
-
- 
-    <div 
+    <div
       ref={toolbarRef}
       className={`fixed z-50 bg-cyan-900 dark:bg-[#1E1F22] shadow-lg p-3 rounded-lg transition-all duration-300 cursor-grab`}
-      style={{ top: position.y, right: position.x }}
+      style={{ top: position.y, left: position.x }}
       onMouseDown={handleMouseDown}
     >
       {isMinimized ? (
         <div className="flex items-center">
           <FileBox
-            className="h-8 w-8 text-white cursor-pointer  "
+            className="h-8 w-8 text-white cursor-pointer"
             data-draggable="true"
             onClick={() => setIsMinimized(false)}
           />
         </div>
       ) : (
-        <div >
-          <div className="flex justify-between items-center mb-2    ">
+        <>
+          <div className="flex justify-between items-center mb-2">
             <GripVertical
               className="text-white cursor-pointer"
               data-draggable="true"
@@ -130,38 +126,33 @@ export const Managebar: React.FC = () => {
                   draggable
                   onDragStart={(e) => handleDragStart(e, "Tsunami")}
                 >
-                  < CloudMoonRain className="h-8 w-8 text-white mx-auto" />
+                  <CloudMoonRain className="h-8 w-8 text-white mx-auto" />
                 </div>
-               </ActionTooltip>
+              </ActionTooltip>
 
-               <ActionTooltip label="Flood" side="top" align="center">
+              <ActionTooltip label="Flood" side="top" align="center">
                 <div
                   className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
                   draggable
                   onDragStart={(e) => handleDragStart(e, "Flood")}
                 >
-                  < Waves className="h-8 w-8 text-white mx-auto" />
+                  <Waves className="h-8 w-8 text-white mx-auto" />
                 </div>
-               </ActionTooltip>
+              </ActionTooltip>
 
-               
-               <ActionTooltip label="Volcanoc_Eroption" side="top" align="center">
+              <ActionTooltip label="Volcanic Eruption" side="top" align="center">
                 <div
                   className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
                   draggable
-                  onDragStart={(e) => handleDragStart(e, "volcanoc_Eroption")}
+                  onDragStart={(e) => handleDragStart(e, "Volcanic Eruption")}
                 >
-                  < ChevronUp  className="h-8 w-8 text-white mx-auto" />
+                  <ChevronUp className="h-8 w-8 text-white mx-auto" />
                 </div>
-               </ActionTooltip>
-              
+              </ActionTooltip>
             </div>
           </ScrollArea>
-          </div>
+        </>
       )}
     </div>
-
-    
-
   );
 };
