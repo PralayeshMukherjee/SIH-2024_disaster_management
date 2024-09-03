@@ -21,7 +21,7 @@ const FireSpreadEstimator: React.FC<FireSpreadEstimatorProps> = ({ onEstimate })
 
   return (
     <div>
-      <Card className="relative w-[350px] bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden ">
+      <Card className="relative w-[350px] bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden text-green-600 ">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-emerald-200 text-center mb-4">
             Fire Spread Estimator
