@@ -36,14 +36,14 @@ const FuturePages: React.FC = () => {
   return (
     <>
       <div className="flex flex-col " style={{ overflowX: "hidden" }}>
-  <div >
+  <div>
     <Managebar />
   </div>
-  <div className="flex-1 ml-64">
-    <div className="flex justify-end px-24">
+  <div className="flex-1 ">
+    <div className="flex justify-end py-3">
       <PopoverDemo />
     </div>
-    <div className="w-11/12">
+    <div className=" pr-48 w-full ">
       <Pie_Chart />
     </div>
     <ScrollArea

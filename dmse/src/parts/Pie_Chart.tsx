@@ -61,7 +61,7 @@ export function Pie_Chart() {
   }, [])
 
   return (
-    <Card className="flex flex-col max-w-[80vw]">
+    <Card className="flex flex-col max-w-[80vw] ">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart</CardTitle>
         <CardDescription>Yearly Prediction</CardDescription>
