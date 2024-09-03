@@ -35,7 +35,7 @@ const FuturePages: React.FC = () => {
  
   return (
     <>
- <Managebar  />
+ 
       <div className="flex justify-end px-24">
         <PopoverDemo />
       </div>
@@ -107,7 +107,11 @@ const FuturePages: React.FC = () => {
             }
           })}
         </div>
+      
       </ScrollArea>
+<div  >
+      <Managebar  />
+      </div>
     </>
   );
 };

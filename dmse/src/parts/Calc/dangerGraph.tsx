@@ -39,8 +39,8 @@ const DangerGraph: React.FC<DangerGraphProps> = ({ dangerLevels, onReset }) => {
           <ChartNetworkIcon size={40} className="text-emerald-950" />
         </div>
       ) : (
-        <Card className="relative w-[350px] bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden p-4">
-          <div className="flex justify-between items-center mb-4">
+        <Card className="relative w-[350px] bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden p-4 text-green-300 ">
+          <div className="flex justify-between items-center  mb-4">
             <h3 className="text-xl font-bold">Danger Level Graph</h3>
             <div className="flex space-x-2">
               <button onClick={onReset} className="text-sm py-1 px-2 bg-red-500 text-white rounded-md hover:bg-red-600">

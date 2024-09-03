@@ -62,7 +62,7 @@ export const Managebar: React.FC = () => {
 
 
   return (
-    <div
+    <div 
       ref={toolbarRef}
       className={`fixed z-50 bg-cyan-900 dark:bg-[#1E1F22] shadow-lg p-3 rounded-lg transition-all duration-300 cursor-grab`}
       style={{ top: position.y, left: position.x }}
@@ -71,14 +71,14 @@ export const Managebar: React.FC = () => {
       {isMinimized ? (
         <div className="flex items-center">
           <FileBox
-            className="h-8 w-8 text-white cursor-pointer"
+            className="h-8 w-8 text-white cursor-pointer  "
             data-draggable="true"
             onClick={() => setIsMinimized(false)}
           />
         </div>
       ) : (
-        <>
-          <div className="flex justify-between items-center mb-2">
+        <div >
+          <div className="flex justify-between items-center mb-2    ">
             <GripVertical
               className="text-white cursor-pointer"
               data-draggable="true"
@@ -154,7 +154,7 @@ export const Managebar: React.FC = () => {
               
             </div>
           </ScrollArea>
-        </>
+          </div>
       )}
     </div>
   );
