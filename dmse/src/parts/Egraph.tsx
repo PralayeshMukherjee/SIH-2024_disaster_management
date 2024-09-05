@@ -186,7 +186,7 @@ export function Egraph() {
   
 
   return (
-    <div className="w-8/12">
+    <div className="px-4">
       <Card className="bg-cyan-900/30 backdrop-blur-3xl text-opacity-100 text-emerald-300">
         <CardHeader className="text-emerald-300">
           <CardTitle>{chartType.charAt(0).toUpperCase() + chartType.slice(1)} Chart - Multiple</CardTitle>
