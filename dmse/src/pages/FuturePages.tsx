@@ -32,14 +32,14 @@ const FuturePages: React.FC = () => {
   const handleRemoveCard = (id: number) => {
     setCards(cards.filter((card) => card.id !== id));
   };
- 
   return (
-    <>
+<>
   <div className="flex-1 ml-64 ">
     <div className="flex justify-end px-24">
       <div className="flex flex-col " style={{ overflowX: "hidden" }}>
   <div>
     <Managebar />
+  </div>
   </div>
   <div className="flex-1 ">
     <div className="flex justify-end py-3">
@@ -108,8 +108,11 @@ const FuturePages: React.FC = () => {
   <div >
     <Managebar />
   </div>
-    </>
-  );
-};
+  </div>
+  </div>
 
-export default FuturePages;
+ </> 
+  )
+}
+
+export default FuturePages
