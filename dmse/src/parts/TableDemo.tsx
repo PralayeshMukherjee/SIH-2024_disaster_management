@@ -17,7 +17,7 @@ const no = [
   },
   {
     Date:"20-06-24",
-    Origin:"Behar",
+    Origin:"Bihar",
     Disaster:"Tsunami",
     Duration:"9",
   },
@@ -49,21 +49,21 @@ const no = [
   
   export function TableDemo() {
     return (
-      <Table>
+      <Table className=" w-full rounded-md border-slate-300/20 ">
         <TableCaption>A list of Events</TableCaption>
-        <TableRow className="bg-slate-300">
+        <TableRow className="bg-slate-300 rounded-xl ">
       <TableHead className="w-[100px]">Origin</TableHead>
       <TableHead>Disaster</TableHead>
       <TableHead>Date</TableHead>
       <TableHead className="text-right">Duration(days) </TableHead>
     </TableRow>
     <TableBody>
-        {no.map((no) => (
-          <TableRow key={no.no}>
-            <TableCell className="font-medium">{no.Origin}</TableCell>
-            <TableCell>{no.Disaster}</TableCell>
-            <TableCell>{no.Date}</TableCell>
-            <TableCell className="text-right">{no.Duration}</TableCell>
+        {no.map((item, idx) => (
+          <TableRow key={`${item.Date}-${item.Origin}-${idx}`}>
+            <TableCell className="font-medium">{item.Origin}</TableCell>
+            <TableCell>{item.Disaster}</TableCell>
+            <TableCell>{item.Date}</TableCell>
+            <TableCell className="text-right">{item.Duration}</TableCell>
           </TableRow>
         ))}
       </TableBody>

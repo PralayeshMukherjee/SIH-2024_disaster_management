@@ -20,7 +20,7 @@ const Analysis = () => {
   return (
     <>
      <div className="flex flex-row justify-between">
-      <div className="flex flex-wrap justify-center space-x-10 text-center mt-10">
+      <div className="flex flex-wrap justify-center space-x-10 text-center mt-10 space-y-7">
         <ResourceCalculator />
         <FireSpreadEstimator onEstimate={handleEstimate} />
         {dangerLevels.length > 0 && (

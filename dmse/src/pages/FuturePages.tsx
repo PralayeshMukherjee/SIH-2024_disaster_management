@@ -53,7 +53,7 @@ const FuturePages: React.FC = () => {
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >
-      <div className="flex flex-wrap justify-center space-x-10 text-center mt-10">
+      <div className="flex flex-wrap justify-center space-x-10 text-center mt-10 ">
         {cards.map((card) => {
           switch (card.type) {
             case "weather-card":

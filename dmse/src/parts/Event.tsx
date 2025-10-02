@@ -19,35 +19,35 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 const chartData = [
-  { date: "2024-04-01", Earthquake: 1, Cyclone: 1,Tsunami: 1, Volcanic: 1,Flood: 1},
+  { date: "2025-04-01", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic: 0,Flood: 1},
 
-  { date: "2024-04-03", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic: 0,Flood: 0},
-  { date: "2024-04-22", Earthquake: 1, Cyclone: 2  ,Tsunami: 0, Volcanic:1,Flood: 1},
-  { date: "2024-04-27", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic:1,Flood: 0},
-  { date: "2024-04-28", Earthquake: 1, Cyclone: 0 ,Tsunami: 0, Volcanic:1,Flood: 1},
-  { date: "2024-04-29", Earthquake: 0, Cyclone: 2 ,Tsunami: 1, Volcanic: 0,Flood: 0},
+  { date: "2025-04-03", Earthquake: 1, Cyclone: 0 ,Tsunami: 0, Volcanic: 0,Flood: 0},
+  { date: "2025-04-22", Earthquake: 0, Cyclone: 0   ,Tsunami: 0, Volcanic:0,Flood: 1},
+  { date: "2025-04-27", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic:1,Flood: 0},
+  { date: "2025-04-28", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic:0,Flood: 1},
+  { date: "2025-04-29", Earthquake: 0, Cyclone: 0  ,Tsunami: 0, Volcanic: 0,Flood: 0},
 
-  { date: "2024-05-01", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic: 2,Flood: 1},
+  { date: "2025-05-01", Earthquake: 1, Cyclone: 0 ,Tsunami: 0, Volcanic: 2,Flood: 1},
 
-  { date: "2024-05-03", Earthquake: 1, Cyclone: 1 ,Tsunami: 0, Volcanic: 0,Flood: 0},
-  { date: "2024-05-04", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic: 0,Flood: 1},
+  { date: "2025-05-03", Earthquake: 0, Cyclone: 0  ,Tsunami: 0, Volcanic: 0,Flood: 0},
+  { date: "2025-05-04", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic: 0,Flood: 1},
 
 
-  { date: "2024-05-21", Earthquake:  0, Cyclone: 0  ,Tsunami: 0, Volcanic: 0,Flood: 1},
-  { date: "2024-05-22", Earthquake: 1, Cyclone: 1, Tsunami:0 , Volcanic: 0,Flood: 0},
-  { date: "2024-05-23", Earthquake: 0, Cyclone:0,Tsunami: 0, Volcanic:1,Flood: 1},
-  { date: "2024-05-24", Earthquake: 1, Cyclone: 0,Tsunami: 0, Volcanic: 0,Flood: 1},
-  { date: "2024-05-25", Earthquake: 0, Cyclone: 2,Tsunami: 1, Volcanic: 0,Flood: 0},
+  { date: "2025-05-21", Earthquake:  0, Cyclone: 0  ,Tsunami: 0, Volcanic: 0,Flood: 1},
+  { date: "2025-05-22", Earthquake: 0, Cyclone: 0 , Tsunami:0 , Volcanic: 0,Flood: 0},
+  { date: "2025-05-23", Earthquake: 0, Cyclone:0,Tsunami: 0, Volcanic:1,Flood: 1},
+  { date: "2025-05-24", Earthquake: 0, Cyclone: 0,Tsunami: 0, Volcanic: 0,Flood: 1},
+  { date: "2025-05-25", Earthquake: 1, Cyclone: 0 ,Tsunami: 0, Volcanic: 0,Flood: 0},
   
-  { date: "2024-05-30", Earthquake: 1, Cyclone: 0,Tsunami: 0, Volcanic: 0,Flood: 1},
-  { date: "2024-05-31", Earthquake: 0, Cyclone: 1,Tsunami: 0, Volcanic:1,Flood: 0},
+  { date: "2025-05-30", Earthquake: 0, Cyclone: 0,Tsunami: 0, Volcanic: 0,Flood: 1},
+  { date: "2025-05-31", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic:0,Flood: 0},
   
-  { date: "2024-06-06", Earthquake: 1, Cyclone: 1,Tsunami: 0, Volcanic: 0,Flood: 1},
+  { date: "2025-06-06", Earthquake: 0, Cyclone: 0 ,Tsunami: 0, Volcanic: 0,Flood: 1},
 
 
-  { date: "2024-06-09", Earthquake: 0, Cyclone: 0,Tsunami: 1, Volcanic: 0,Flood: 0},
+  { date: "2025-06-09", Earthquake: 0, Cyclone: 0,Tsunami: 0, Volcanic: 0,Flood: 0},
 
-  { date: "2024-06-30", Earthquake: 1, Cyclone: 1 ,Tsunami: 0, Volcanic: 0,Flood: 1},
+  { date: "2025-06-30", Earthquake: 0, Cyclone: 0  ,Tsunami: 0, Volcanic: 0,Flood: 1},
 
 ]
 
@@ -93,16 +93,22 @@ export function Event() {
   )
 
   return (
-    <Card>
+    <Card className="bg-slate-950/25">
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-          <CardTitle>Line Chart </CardTitle>
+          <CardTitle>
+            <span className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
+              Line Chart
+            </span>
+          </CardTitle>
           <CardDescription>
-            sowing last 3 month Analysis
+            <span className="bg-gradient-to-r from-blue-400 to-pink-400  bg-clip-text text-transparent">
+              sowing last 3 month Analysis
+            </span>
           </CardDescription>
         </div>
         <div className="flex">
-          {["Earthquake", "Cyclone","Tsunami","Volcanic","Flood"].map((key) => {
+          {["Earthquake", "Cyclone", "Tsunami", "Volcanic", "Flood"].map((key) => {
             const chart = key as keyof typeof chartConfig
             return (
               <button
@@ -114,7 +120,7 @@ export function Event() {
                 <span className="text-xs text-muted-foreground">
                   {chartConfig[chart].label}
                 </span>
-                <span className="text-lg font-bold leading-none sm:text-3xl">
+                <span className="text-lg font-bold leading-none sm:text-3xl text-blue-200">
                   {total[key as keyof typeof total].toLocaleString()}
                 </span>
               </button>

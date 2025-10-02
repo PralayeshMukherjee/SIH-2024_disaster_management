@@ -65,9 +65,9 @@ const ClimateGraph = () => {
   }, []);
 
   return (
-      <Card>
+      <Card className='bg-zinc-700'>
         <CardHeader>
-        <CardTitle>Parameter</CardTitle>
+        <CardTitle className='text-blue-200'>Parameter</CardTitle>
         <CardDescription>
           Showing climatic conditions
         </CardDescription>
@@ -133,7 +133,7 @@ const ClimateGraph = () => {
       </ChartContainer>
       </CardContent>
       <CardFooter>
-        <div className="flex w-full items-start gap-2 text-sm">
+        <div className="flex w-full items-start gap-2 text-sm text-pink-200">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 font-medium leading-none">
              Weather Indicators <TrendingUp className="h-4 w-4" />
