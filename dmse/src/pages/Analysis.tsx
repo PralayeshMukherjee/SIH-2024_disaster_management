@@ -25,12 +25,16 @@ const Analysis = () => {
         <FireSpreadEstimator onEstimate={handleEstimate} />
    
         <HeatWaveCalculator />
-             {dangerLevels.length > 0 && (
-          <DangerGraph dangerLevels={dangerLevels} onReset={resetDangerLevels}  />
-        )}
+
         
         </div>
+           <div className='ml-10' >
+               {dangerLevels.length > 0 && (
+          <DangerGraph dangerLevels={dangerLevels} onReset={resetDangerLevels}  />
+        )}
+        </div>      
         <div className='p-9'>
+         
         <WeatherStationForecast  />
       
       </div>

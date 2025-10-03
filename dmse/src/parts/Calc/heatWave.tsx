@@ -128,7 +128,7 @@ const HeatWaveCalculator: React.FC = () => {
           </Button>
         </CardFooter>
         {finalHeatIndex !== null && (
-          <CardContent className="mt-6 bg-blue-100 p-4 text-black-700 rounded-md">
+          <CardContent className="mt-6 bg-blue-100 p-4 text-black-700 rounded-md text-cyan-900">
             <h3 className="text-lg font-semibold text-black-700 mb-2">Results</h3>
             <p>Heat Index: {finalHeatIndex.toFixed(2)}°F</p>
             <p>Intensity: {description}</p>

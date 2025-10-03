@@ -187,21 +187,21 @@ export function Egraph() {
 
   return (
     <div className="px-4">
-      <Card className="bg-cyan-900 backdrop-blur-3xl bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent font-bold">
-        <CardHeader className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent font-bold">
+      <Card className="bg-cyan-900 backdrop-blur-3xl bg-gradient-to-r from-emerald-500 to-blue-500 bg-clip-text text-transparent font-bold">
+        <CardHeader className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent font-bold">
           <CardTitle>{chartType.charAt(0).toUpperCase() + chartType.slice(1)} Chart - Multiple</CardTitle>
-          <CardDescription className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent font-bold">2023</CardDescription>
+          <CardDescription className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent font-bold">2023</CardDescription>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig}>{renderChart()}</ChartContainer>
         </CardContent>
-        <CardFooter className="text-pink-200">
+        <CardFooter className="text-blue-200">
           <div className="flex w-full items-start gap-4 text-sm">
             <BarChartIcon onClick={() => setChartType("bar")} className="cursor-pointer" />
             <LineChartIcon onClick={() => setChartType("line")} className="cursor-pointer" />
             <PieChartIcon onClick={() => setChartType("pie")} className="cursor-pointer" />
             <div className="grid gap-2">
-              <div className="flex items-center gap-2 leading-none bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent font-bold">
+              <div className="flex items-center gap-2 leading-none bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent font-bold">
                 Showing total analysis for the last 1 year
               </div>
             </div>
