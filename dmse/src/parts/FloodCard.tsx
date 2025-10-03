@@ -11,7 +11,7 @@ interface FloodCardProps {
 
 export function FloodCard({ onClose }: FloodCardProps) {
   return (
-    <Card className="relative w-[400px] bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden text-emerald-200">
+    <Card className="relative w-[400px] bg-white/10  backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden text-emerald-200">
       <button
         className="absolute top-2 right-2 p-1 text-gray-500 hover:text-red-700"
         onClick={onClose}

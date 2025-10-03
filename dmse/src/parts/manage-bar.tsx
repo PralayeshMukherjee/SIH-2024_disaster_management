@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { GripVertical, FileBox, Maximize2Icon, MinusIcon, Droplets, CloudMoonRain, Earth, Waves, ChevronUp, Zap } from "lucide-react";
+import { GripVertical, FileBox, Maximize2Icon, MinusIcon, Droplets, CloudMoonRain, Earth, Waves,  Zap } from "lucide-react";
+//import{ChevronUp} from "lucide-react"
 import { ActionTooltip } from "@/components/action-tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
@@ -66,7 +67,7 @@ export const Managebar: React.FC = () => {
   return (
     <div
       ref={toolbarRef}
-      className={`fixed z-50 bg-cyan-900 dark:bg-[#1E1F22] shadow-lg p-3 rounded-lg transition-all duration-300 cursor-grab`}
+      className={`fixed  bg-cyan-900 dark:bg-[#1E1F22] shadow-lg p-3 rounded-lg transition-all duration-300 cursor-grab`}
       style={{ top: position.y, left: position.x }}
       onMouseDown={handleMouseDown}
     >
@@ -143,15 +144,16 @@ export const Managebar: React.FC = () => {
                 </div>
               </ActionTooltip>
 
-              <ActionTooltip label="Volcanic Eruption" side="top" align="center">
+             { /*<ActionTooltip label="Volcanic Eruption" side="top" align="center">
                 <div
                   className="bg-cyan-700 p-2 rounded-md hover:bg-cyan-600 transition-all border-[2px] border-black cursor-pointer"
                   draggable
-                  onDragStart={(e) => handleDragStart(e, "Volcanic Eruption")}
+                  onDragStart={(e) => handleDragStart(e, "Volcanic-eroption")}
                 >
                   <ChevronUp className="h-8 w-8 text-white mx-auto" />
                 </div>
               </ActionTooltip>
+*/}
             </div>
           </ScrollArea>
         </>
