@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/componen
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-
+import { Wind } from 'lucide-react';
 interface FireSpreadEstimatorProps {
   onEstimate: (rate: number) => void;
 }
@@ -21,15 +21,21 @@ const FireSpreadEstimator: React.FC<FireSpreadEstimatorProps> = ({ onEstimate })
 
   return (
     <div>
-      <Card className="relative w-[350px] bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl border-hidden text-green-600 ">
-        <CardHeader>
-          <CardTitle className="text-xl font-bold text-emerald-200 text-center mb-4">
-            Fire Spread Estimator
+      <Card className="relative w-[350px]  bg-slate-900/30  shadow-2xl rounded-2xl border-[2px] border-cyan-200/50 text-blue-200   ">
+        <CardHeader className='flex flex-row items-center justify-center gap-3 text-xl font-bold text-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+        '>
+            
+          <CardTitle className="text-xl font-bold text-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+            Fire Spread Estimator  
+        
           </CardTitle>
+              <Wind />
         </CardHeader>
         <CardContent>
+          
           <div className="grid gap-4">
             <div className="flex flex-col">
+              <div className="flex flex-col bg-slate-500/10 p-2 rounded-md">
               <Label htmlFor="windSpeed" className="mb-2">
                 Wind Speed (km/h)
               </Label>
@@ -39,11 +45,13 @@ const FireSpreadEstimator: React.FC<FireSpreadEstimatorProps> = ({ onEstimate })
                 value={windSpeed}
                 onChange={(e) => setWindSpeed(Number(e.target.value))}
                 placeholder="Enter wind speed"
-                className="p-2 border border-gray-300 rounded-md"
+                className="p-2 border text-black-200 border-gray-800/10 rounded-md bg-zinc-700/50 w-full"
               />
+              </div>
             </div>
-
+           
             <div className="flex flex-col">
+              <div className="flex flex-col bg-slate-500/10 p-2 rounded-md">
               <Label htmlFor="vegetationType" className="mb-2">
                 Vegetation Type
               </Label>
@@ -51,15 +59,16 @@ const FireSpreadEstimator: React.FC<FireSpreadEstimatorProps> = ({ onEstimate })
                 id="vegetationType"
                 value={vegetationType}
                 onChange={(e) => setVegetationType(e.target.value as VegetationType)}
-                className="p-2 border border-gray-300 rounded-md"
+                className="p-2 border text-black-200 border-gray-800/10 rounded-md bg-zinc-700/50 w-full"
               >
                 <option value="Grassland">Grassland</option>
                 <option value="Forest">Forest</option>
                 <option value="Shrubland">Shrubland</option>
               </select>
             </div>
-
+            </div>
             <div className="flex flex-col">
+              <div className="flex flex-col bg-slate-500/10 p-2 rounded-md">
               <Label htmlFor="humidity" className="mb-2">
                 Humidity (%)
               </Label>
@@ -69,13 +78,15 @@ const FireSpreadEstimator: React.FC<FireSpreadEstimatorProps> = ({ onEstimate })
                 value={humidity}
                 onChange={(e) => setHumidity(Number(e.target.value))}
                 placeholder="Enter humidity"
-                className="p-2 border border-gray-300 rounded-md"
+               
+               className="p-2 border text-black-200 border-gray-800/10 rounded-md bg-zinc-700/50 w-full"
               />
+               </div>
             </div>
           </div>
         </CardContent>
         <CardFooter className="flex justify-between mt-4">
-          <Button onClick={calculateFireSpread} className="w-full py-2 bg-red-500 text-white rounded-md hover:bg-red-600">
+          <Button onClick={calculateFireSpread} className="w-full py-2 bg-red-400 text-white rounded-md hover:bg-red-500">
             Estimate Fire Spread
           </Button>
         </CardFooter>

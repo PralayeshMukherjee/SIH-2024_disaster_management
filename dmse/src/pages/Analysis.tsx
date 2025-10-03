@@ -2,7 +2,7 @@ import { useState } from 'react';
 import DangerGraph from '@/parts/Calc/dangerGraph';
 import FireSpreadEstimator from '@/parts/Calc/fSpreadCalc';
 import ResourceCalculator from '@/parts/Calc/resCalc';
-import LefttPanel from '@/parts/leftPanel';
+
 import HeatWaveCalculator from '@/parts/Calc/heatWave';
 import WeatherStationForecast from '@/parts/Weather';
 
@@ -19,18 +19,20 @@ const Analysis = () => {
 
   return (
     <>
-     <div className="flex flex-row justify-between">
-      <div className="flex flex-wrap justify-center space-x-10 text-center mt-10 space-y-7">
+     <div className=" ">
+      <div className="flex flex-row justify-center space-x-5 text-center mt-10 space-y-7">
         <ResourceCalculator />
         <FireSpreadEstimator onEstimate={handleEstimate} />
-        {dangerLevels.length > 0 && (
-          <DangerGraph dangerLevels={dangerLevels} onReset={resetDangerLevels} />
-        )}
+   
         <HeatWaveCalculator />
-        <WeatherStationForecast />
-      </div>
-      <div className="flex-none">
-        <LefttPanel />
+             {dangerLevels.length > 0 && (
+          <DangerGraph dangerLevels={dangerLevels} onReset={resetDangerLevels}  />
+        )}
+        
+        </div>
+        <div className='p-9'>
+        <WeatherStationForecast  />
+      
       </div>
       </div>
     </>
